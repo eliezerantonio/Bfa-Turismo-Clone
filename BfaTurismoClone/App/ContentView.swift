@@ -11,13 +11,7 @@ struct ContentView: View {
     var places: [Place] = placesData
 
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: HomeView()) {
-                    Text("Go to")
-                }
-            }
-        }
+        LiquidIntroView()
     }
 }
 
