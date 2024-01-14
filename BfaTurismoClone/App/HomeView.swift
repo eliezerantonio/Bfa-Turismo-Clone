@@ -39,7 +39,7 @@ struct HomeView: View {
             .listStyle(PlainListStyle())
             .edgesIgnoringSafeArea(.horizontal)
             .scrollIndicators(ScrollIndicatorVisibility.hidden)
-        }
+        }.navigationBarHidden(true)
     }
 }
 

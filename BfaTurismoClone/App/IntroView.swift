@@ -30,6 +30,7 @@ struct LiquidIntroView: View {
             ZStack(alignment: .top) {
                 ForEach(intros.indices.reversed(), id: \.self) { index in
                     // Intro View
+
                     IntroView(intro: intros[index])
                         .clipShape(LiquidShape(offset: intros[index].offset, curvePoint: 0))
                         .ignoresSafeArea()
@@ -44,73 +45,78 @@ struct LiquidIntroView: View {
                     }
 
                     Spacer()
+                    NavigationLink(destination: HomeView()) {
+                        Text("Saltar")
+                    }
                 }
                 .padding()
                 .padding(.horizontal)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            }
-            .gesture(
-                DragGesture()
-                    .updating($isDragging, body: { _, out, _ in
-                        out = true
-                    })
-                    .onChanged({ value in
-                        withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)) {
-                            intros[fakeIndex].offset = value.translation
-                        }
+            }.navigationBarHidden(true)
 
-                    })
-                    .onEnded({ _ in
-                        withAnimation(.spring()) {
-                            if -intros[fakeIndex].offset.width >
-                                getRect().width / 2 {
-                                intros[fakeIndex].offset.width = -getRect().height * 1.5
+                .gesture(
+                    DragGesture()
+                        .updating($isDragging, body: { _, out, _ in
+                            out = true
 
-                                fakeIndex += 1
-
-                                // MARK: - UPDATE ORIGINAL INDEX
-
-                                if currentIndex == intros.count - 3 {
-                                    currentIndex = 0
-                                } else {
-                                    currentIndex += 1
-                                }
-
-                                // MARK: - RESETING INDEX
-
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                                    if fakeIndex == (intros.count - 2) {
-                                        for index in 0 ..< intros.count - 2 {
-                                            intros[index].offset = .zero
-                                        }
-
-                                        fakeIndex = 0
-                                    }
-                                }
-
-                            } else {
-                                intros[fakeIndex].offset = .zero
+                        })
+                        .onChanged({ value in
+                            withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)) {
+                                intros[fakeIndex].offset = value.translation
                             }
-                        }
-                    })
-            )
 
-            .onAppear {
-                guard let first = intros.first else {
-                    return
+                        })
+                        .onEnded({ _ in
+                            withAnimation(.spring()) {
+                                if -intros[fakeIndex].offset.width >
+                                    getRect().width / 2 {
+                                    intros[fakeIndex].offset.width = -getRect().height * 1.5
+
+                                    fakeIndex += 1
+
+                                    // MARK: - UPDATE ORIGINAL INDEX
+
+                                    if currentIndex == intros.count - 3 {
+                                        currentIndex = 0
+                                    } else {
+                                        currentIndex += 1
+                                    }
+
+                                    // MARK: - RESETING INDEX
+
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                        if fakeIndex == (intros.count - 2) {
+                                            for index in 0 ..< intros.count - 2 {
+                                                intros[index].offset = .zero
+                                            }
+
+                                            fakeIndex = 0
+                                        }
+                                    }
+
+                                } else {
+                                    intros[fakeIndex].offset = .zero
+                                }
+                            }
+                        })
+                )
+
+                .onAppear {
+                    guard let first = intros.first else {
+                        return
+                    }
+
+                    guard var last = intros.last else {
+                        return
+                    }
+
+                    last.offset.width = -getRect().height * 1.5
+
+                    intros.append(first)
+                    intros.insert(last, at: 0)
+
+                    fakeIndex = 1
                 }
-
-                guard var last = intros.last else {
-                    return
-                }
-
-                last.offset.width = -getRect().height * 1.5
-
-                intros.append(first)
-                intros.insert(last, at: 0)
-
-                fakeIndex = 1
-            }
         }
     }
 
