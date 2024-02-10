@@ -41,7 +41,14 @@ struct PlaceDetailView: View {
                         Spacer()
                     }
                 }
-                PlacesPointView()
+
+                if selected {
+                    CustomDisclosureView(icon: "location", description: "Imperdível", contents: place.places)
+                    CustomDisclosureView(icon: "food", description: "Inesquecível comida da região", content: place.food)
+                    CustomDisclosureView(icon: "path", description: "Os melhores caminhos", content: place.path)
+                } else {
+                    CustomDisclosureView(icon: "location", description: "Agência \(place.capital)", content: "+244 938 472")
+                }
 
             }.navigationTitle("")
                 .navigationBarTitleDisplayMode(.inline)

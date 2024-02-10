@@ -13,7 +13,7 @@ struct LiquidIntroView: View {
     @State var intros: [Intro] = [
         Intro(img: "intro1", color: Color("CustomTealColor")),
 
-        Intro(img: "intro2", color: Color("CustomDarkGrayColor")),
+        Intro(img: "intro2", color: Color("CustomTealColor")),
 
         Intro(img: "intro3", color: Color("CustomDarkGrayColor")),
     ]
@@ -46,7 +46,7 @@ struct LiquidIntroView: View {
 
                     Spacer()
                     NavigationLink(destination: HomeView()) {
-                        Text("Saltar")
+                        currentIndex == 2 ? Text("Saltar").foregroundColor(.white) : Text("")
                     }
                 }
                 .padding()
@@ -60,6 +60,7 @@ struct LiquidIntroView: View {
                             out = true
 
                         })
+
                         .onChanged({ value in
                             withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)) {
                                 intros[fakeIndex].offset = value.translation

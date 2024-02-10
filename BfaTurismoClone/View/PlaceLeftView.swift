@@ -9,31 +9,29 @@ import SwiftUI
 
 struct PlaceLeftView: View {
     var place: Place
-
+    @State var show = false
     var body: some View {
-        ZStack {
-            HStack {
-                Spacer()
-                VStack(alignment: .leading) {
-                    Text(place.title)
-                        .foregroundColor(Color("CustomOrangeColor"))
-                        .font(.title)
-                        .fontWeight(.bold)
+        HStack {
+            Spacer()
+            VStack(alignment: .leading) {
+                Text(place.title)
+                    .foregroundColor(Color("CustomOrangeColor"))
+                    .font(.title)
+                    .fontWeight(.bold)
 
-                    Text("Capital:\(place.capital)")
-                        .foregroundColor(Color("CustomOrangeColor"))
-                        .font(.caption)
-                        .fontWeight(.bold)
-                }
-                .padding()
-                Spacer()
-                Image(place.image)
-                    .resizable()
-                    .scaledToFit()
+                Text("Capital:\(place.capital)")
+                    .foregroundColor(Color("CustomOrangeColor"))
+                    .font(.caption)
+                    .fontWeight(.bold)
             }
-            .background(Color("CustomGrayColor"))
-
-        }.frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/, maxHeight: 180)
+            .padding()
+            Spacer()
+            Image(place.image)
+                .resizable()
+                .scaledToFit()
+        }
+        .background(Color("CustomGrayColor"))
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/, maxHeight: 180)
     }
 }
 

@@ -16,4 +16,7 @@ struct Place: Identifiable {
     var imageDetail: String
     var description: String
     var temperature: String
+    var places: [String]
+    var food: String
+    var path: String
 }

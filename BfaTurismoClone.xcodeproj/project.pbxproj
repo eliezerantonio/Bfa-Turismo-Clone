@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D7214A032B4AC72200162B0F /* CustomBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7214A022B4AC72200162B0F /* CustomBoxView.swift */; };
-		D7214A052B4B198100162B0F /* PlacesPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7214A042B4B198100162B0F /* PlacesPointView.swift */; };
 		D7214A072B4B1E0400162B0F /* CustomDisclosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7214A062B4B1E0400162B0F /* CustomDisclosureView.swift */; };
 		D7B338E52B49FE300064812F /* BfaTurismoCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B338E42B49FE300064812F /* BfaTurismoCloneApp.swift */; };
 		D7B338E72B49FE300064812F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B338E62B49FE300064812F /* ContentView.swift */; };
@@ -23,13 +22,13 @@
 		D7B339042B4A4D900064812F /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B339032B4A4D900064812F /* PlaceDetailView.swift */; };
 		D7B339072B4A53D60064812F /* PlaceBodyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B339062B4A53D60064812F /* PlaceBodyDetailView.swift */; };
 		D7B339092B4A584F0064812F /* SmallerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B339082B4A584F0064812F /* SmallerTextView.swift */; };
+		D7FC6EEC2B771D1200241538 /* MyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FC6EEB2B771D1200241538 /* MyTransition.swift */; };
 		D7FDD35A2B5431D40088D455 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDD3592B5431D40088D455 /* IntroView.swift */; };
 		D7FDD35C2B5433040088D455 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDD35B2B5433040088D455 /* Intro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D7214A022B4AC72200162B0F /* CustomBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoxView.swift; sourceTree = "<group>"; };
-		D7214A042B4B198100162B0F /* PlacesPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesPointView.swift; sourceTree = "<group>"; };
 		D7214A062B4B1E0400162B0F /* CustomDisclosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDisclosureView.swift; sourceTree = "<group>"; };
 		D7B338E12B49FE300064812F /* BfaTurismoClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BfaTurismoClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B338E42B49FE300064812F /* BfaTurismoCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BfaTurismoCloneApp.swift; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		D7B339032B4A4D900064812F /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		D7B339062B4A53D60064812F /* PlaceBodyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBodyDetailView.swift; sourceTree = "<group>"; };
 		D7B339082B4A584F0064812F /* SmallerTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallerTextView.swift; sourceTree = "<group>"; };
+		D7FC6EEB2B771D1200241538 /* MyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTransition.swift; sourceTree = "<group>"; };
 		D7FDD3592B5431D40088D455 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		D7FDD35B2B5433040088D455 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +79,7 @@
 		D7B338E32B49FE300064812F /* BfaTurismoClone */ = {
 			isa = PBXGroup;
 			children = (
+				D7FC6EEA2B771CE200241538 /* Extensions */,
 				D7B338F52B4A00CF0064812F /* App */,
 				D7B338F42B4A00C40064812F /* View */,
 				D7B338F32B4A00BD0064812F /* Model */,
@@ -123,7 +124,6 @@
 				D7B339062B4A53D60064812F /* PlaceBodyDetailView.swift */,
 				D7B339082B4A584F0064812F /* SmallerTextView.swift */,
 				D7214A022B4AC72200162B0F /* CustomBoxView.swift */,
-				D7214A042B4B198100162B0F /* PlacesPointView.swift */,
 				D7214A062B4B1E0400162B0F /* CustomDisclosureView.swift */,
 			);
 			path = View;
@@ -139,6 +139,14 @@
 				D7FDD3592B5431D40088D455 /* IntroView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D7FC6EEA2B771CE200241538 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC6EEB2B771D1200241538 /* MyTransition.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,12 +228,12 @@
 				D7B338FA2B4A02400064812F /* FruitData.swift in Sources */,
 				D7B339042B4A4D900064812F /* PlaceDetailView.swift in Sources */,
 				D7B339002B4A157A0064812F /* PlaceRightView.swift in Sources */,
-				D7214A052B4B198100162B0F /* PlacesPointView.swift in Sources */,
 				D7214A072B4B1E0400162B0F /* CustomDisclosureView.swift in Sources */,
 				D7B338FC2B4A0A690064812F /* HomeView.swift in Sources */,
 				D7214A032B4AC72200162B0F /* CustomBoxView.swift in Sources */,
 				D7B338E52B49FE300064812F /* BfaTurismoCloneApp.swift in Sources */,
 				D7B339092B4A584F0064812F /* SmallerTextView.swift in Sources */,
+				D7FC6EEC2B771D1200241538 /* MyTransition.swift in Sources */,
 				D7B339022B4A371A0064812F /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

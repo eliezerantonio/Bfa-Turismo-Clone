@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlaceRightView: View {
     var place: Place
+
     var body: some View {
         HStack {
             Image(place.image)
@@ -29,9 +30,7 @@ struct PlaceRightView: View {
 
             }.padding()
             Spacer()
-        }.background(Color("CustomGrayColor"))
-
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/, maxHeight: 180)
+        }.background(Color("CustomGrayColor")).frame(maxWidth: /*@START_MENU_TOKEN@*/ .infinity/*@END_MENU_TOKEN@*/, maxHeight: 180)
     }
 }
 

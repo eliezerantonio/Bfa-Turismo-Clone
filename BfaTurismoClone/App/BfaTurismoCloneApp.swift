@@ -11,7 +11,8 @@ import SwiftUI
 struct BfaTurismoCloneApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+
+            LiquidIntroView()
         }
     }
 }
