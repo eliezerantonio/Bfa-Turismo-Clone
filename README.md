@@ -1,3 +1,5 @@
-# Bfa Turismo, a clone of the angolan Bank App. 
+# Bfa Turismo, a clone of the angolan Bank App
 
-### I will publish de last version before finish the January month.
+| Intro  | Home | Detail |
+| --- | --- | --- |
+![Intro Image!](/Screenshots/Intro.png) | ![Home Image!](/Screenshots/Home.png) | ![Details Image!](/Screenshots/Details.png)
